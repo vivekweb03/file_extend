@@ -1,0 +1,5 @@
+name: File Extend
+description: Extend file entity to add fields
+core: 8.x
+type: module
+package: other

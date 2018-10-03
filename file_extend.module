@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * Implements hook_entity_type_alter().
+ *
+ * Extends the core file entity.
+ */
+function file_extend_entity_type_alter(&$entity_types) {
+  /** @var $entity_types \Drupal\Core\Entity\EntityTypeInterface[] */
+  $entity_types['file']
+    ->setClass('Drupal\file_extend\Entity\FileExtend');
+}
