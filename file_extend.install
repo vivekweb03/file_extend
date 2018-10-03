@@ -10,9 +10,9 @@
  */
 function file_extend_install() {
   /** @var \Drupal\Core\Field\BaseFieldDefinition $type_storage_definition */
-  $type_storage_definition = \Drupal::service('entity_field.manager')->getFieldStorageDefinitions('file')['trash2'];
-  $type_storage_definition->setInitialValue(FILE_TYPE_NONE);
-  \Drupal::entityDefinitionUpdateManager()->installFieldStorageDefinition('trash2', 'file', 'file_entity', $type_storage_definition);
+  $type_storage_definition = \Drupal::service('entity_field.manager')->getFieldStorageDefinitions('file')['trash'];
+  $type_storage_definition->setInitialValue(0);
+  \Drupal::entityDefinitionUpdateManager()->installFieldStorageDefinition('trash', 'file', 'file_extend', $type_storage_definition);
 }
 
 /**
@@ -20,5 +20,5 @@ function file_extend_install() {
  */
 function file_extend_uninstall() {
   // Remove the added column to the core {file_managed} table.
-  db_drop_field('file_managed', 'trash2');
+  db_drop_field('file_managed', 'trash');
 }

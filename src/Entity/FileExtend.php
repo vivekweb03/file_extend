@@ -63,8 +63,8 @@ class FileExtend extends File {
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
-    $fields['trash2'] = BaseFieldDefinition::create('boolean')
-      ->setLabel(t('Trash2'))
+    $fields['trash'] = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('Trash'))
       ->setDescription(t('Indicates that folder is in the junk folder or not.'))
       ->setRevisionable(TRUE)
       ->setDefaultValue(TRUE)
